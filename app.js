@@ -158,3 +158,35 @@ timmy.eat();
 
 timmy.exercise();
 timmy.exercise();
+
+/**Fill in these classes to meet the following requirements:
+
+Chef should be a factory of Dinner.
+Add a constructor to Dinner that sets the string properties: appetizer, entree, and dessert.
+Add a method on Chef that takes three arguments and returns a new Dinner based on those arguments.
+Have the Chef create three Dinners, log the Dinners */
+class Dinner {
+    constructor(appetizer, entree, dessert) {
+        this.appetizer = appetizer;
+        this.entree = entree;
+        this.dessert = dessert
+    }
+}
+
+class Chef {
+    dinnerForGuests(appetizer, entree, dessert) {
+        return new Dinner(appetizer, entree, dessert);
+    }
+}
+const DinnerFromChef = new Chef();
+
+const breakfast = DinnerFromChef.dinnerForGuests("Sambosa", "Egg", "Muffin");
+console.log(breakfast);
+
+const lunch = DinnerFromChef.dinnerForGuests("Pasti", "Beyaynetu", "Baklava");
+console.log(lunch);
+
+const dinnerTime = DinnerFromChef.dinnerForGuests("Kolo", "Doro Wott", "Black Forest Cake");
+console.log(dinnerTime);
+
+
